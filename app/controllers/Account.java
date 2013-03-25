@@ -166,10 +166,6 @@ public class Account extends Controller {
 				flash(Application.FLASH_MESSAGE_KEY,
 						Messages.get("playauthenticate.accounts.link.success"));
 			}
-			System.out.println("ctx() -> "+ctx());
-			System.out.println("link  -> "+link);
-			System.out.println("u     -> "+u);
-			
 			return PlayAuthenticate.link(ctx(), link);
 		}
 	}
