@@ -3,8 +3,13 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@inputText(
-  f("email"),
-  '_showConstraints -> constraints,
-  '_label -> Messages("playauthenticate.login.email.placeholder")
-)
+<div class="clearfix">
+  <label for="@f("email").id">@Messages("playauthenticate.login.email.placeholder")</label>
+  <div class="controls">
+    <div class="input-prepend">
+      <span class="add-on"><i class="icon-envelope"></i></span>
+      <input class="span2" id="@f("email").id" name="@f("email").name" type="text" value="@f("email").value" />
+    </div>
+  </div>
+</div>
+

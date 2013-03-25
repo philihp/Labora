@@ -18,9 +18,9 @@
     	@helper.form(routes.Application.doSignup) {
     	
             @if(signupForm.hasGlobalErrors) { 
-                <p class="error">
+              <p class="error">
 		            <span class="label label-important">@signupForm.globalError.message</span>
-		        </p>
+  	          </p>
             }
             
              @inputText(
