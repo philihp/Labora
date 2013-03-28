@@ -1,0 +1,48 @@
+@(localUser: models.User = null)
+
+@main(Messages("playauthenticate.navigation.labora"), "labora") {
+    
+    <div id="north" class="row">
+        <div class="span1" id="activePlayer">
+            Turn
+        </div>
+        <div class="span10" id="playerTabs">
+            Tabs... Tabs... Tabs...
+        </div>
+        <div class="span1" id="round">
+            Round
+        </div>
+    </div>
+    <div class="row">
+        <div id="west" class="span7">
+            <div id="unbuiltBuildings">
+                <div class="btn pull-right"><span class="caret"></span></div>
+                Unbuilt Buildings
+            </div>
+            <div id="playerBoard">
+                <img src="..." height="300" width="400" alt="Player Homeland"/>
+            </div>
+        </div>
+        <div id="east" class="span5">
+            <div id="rondel">
+                <img src="..." height="300" width="300" alt="Rondel"/>
+            </div>
+            <div id="settlements">
+                Settlements
+            </div>
+            <div id="inventory">
+                inventory
+                inventory
+                inventory
+                inventory
+                inventory
+                inventory
+                inventory
+                inventory
+                inventory
+            </div>
+        </div>
+    </div>
+    
+    
+}

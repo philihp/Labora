@@ -1,0 +1,73 @@
+/* colorblind */
+@darkblue: #1f78b4;
+@lightblue: #a6cee3;
+@darkgreen: #33a02c;
+@lightgreen: #b2df8a;
+
+/* Set3 */
+@color1: #8dd3c7;
+@color2: #ffffb3;
+@color3: #bebada;
+@color4: #fb8072;
+@color5: #80b1d3;
+@color6: #fdb462;
+@color7: #b3de69;
+@color8: #fccde5;
+
+@height: 576px;
+@radius: 3px;
+@gap: 20px;
+@padding: 10px;
+
+#unbuiltBuildings {
+  background-color: @color1;
+  border-radius: @radius;
+  height: ((@height - @gap * 2) * .3);
+}
+
+#rondel {
+  background-color: @color2;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .5);
+}
+
+#playerBoard {
+  background-color: @color3;
+  border-radius: @radius;
+  height: ((@height - @gap * 2) * .6);
+  margin-top: @gap;
+}
+
+#settlements {
+  background-color: @color4;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .1);
+  margin-top: @gap;
+}
+
+#inventory {
+  background-color: @color5;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .3);
+  margin-top: @gap;
+}
+
+#north {
+  margin-bottom: @gap;
+}
+
+#activePlayer {
+  background-color: @color6;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .1);
+}
+#playerTabs {
+  background-color: @color7;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .1);
+}
+#round {
+  background-color: @color8;
+  border-radius: @radius;
+  height: ((@height - @gap * 3) * .1);
+}
