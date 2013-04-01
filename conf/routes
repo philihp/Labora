@@ -4,7 +4,17 @@
 
 # Home page
 GET     /                               controllers.Application.index
-GET     /labora                         controllers.Application.labora
+
+GET     /labora/						controllers.Labora.index
+
+GET     /labora/game/					controllers.LaboraGame.index()
+GET		/labora/game/new				controllers.LaboraGame.create()
+GET     /labora/game/:gameId			controllers.LaboraGame.select(gameId: Long)
+PUT		/labora/game/:gameId			controllers.LaboraGame.update(gameId: Long)
+DELETE	/labora/game/:gameId			controllers.LaboraGame.delete(gameId: Long)
+
+
+
 GET     /assets/javascript/routes.js    controllers.Application.jsRoutes
 
 GET     /profile                        controllers.Application.profile

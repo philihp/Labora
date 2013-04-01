@@ -39,12 +39,6 @@ public class Application extends Controller {
 	}
 
 	@Restrict(@Group(Application.USER_ROLE))
-	public static Result labora() {
-		final User localUser = getLocalUser(session());
-		return ok(labora.render(localUser));
-	}
-
-	@Restrict(@Group(Application.USER_ROLE))
 	public static Result profile() {
 		final User localUser = getLocalUser(session());
 		return ok(profile.render(localUser));
@@ -74,8 +68,10 @@ public class Application extends Controller {
 	public static Result jsRoutes() {
 		return ok(
 				Routes.javascriptRouter("jsRoutes",
-						controllers.routes.javascript.Signup.forgotPassword()))
-				.as("text/javascript");
+						controllers.routes.javascript.LaboraGame.index(),
+						controllers.routes.javascript.Signup.forgotPassword()
+						)
+			).as("text/javascript");
 	}
 
 	public static Result doSignup() {

@@ -3,6 +3,17 @@
 
 # --- !Ups
 
+create table game (
+  id                        bigint auto_increment not null,
+  length                    varchar(5),
+  country                   varchar(7),
+  players                   varchar(5),
+  constraint ck_game_length check (length in ('SHORT','LONG')),
+  constraint ck_game_country check (country in ('FRANCE','IRELAND')),
+  constraint ck_game_players check (players in ('ONE','TWO','THREE','FOUR')),
+  constraint pk_game primary key (id))
+;
+
 create table linked_account (
   id                        bigint auto_increment not null,
   user_id                   bigint,
@@ -77,6 +88,8 @@ alter table users_user_permission add constraint fk_users_user_permission_user_p
 # --- !Downs
 
 SET FOREIGN_KEY_CHECKS=0;
+
+drop table game;
 
 drop table linked_account;
 

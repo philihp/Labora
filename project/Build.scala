@@ -4,7 +4,7 @@ import play.Project._
 
 object ApplicationBuild extends Build {
 
-    val appName         = "play-authenticate-usage"
+    val appName         = "Labora"
     val appVersion      = "1.0-SNAPSHOT"
 
     val appDependencies = Seq(
@@ -17,33 +17,16 @@ object ApplicationBuild extends Build {
       javaEbean
     )
     
-//  Uncomment this for local development of the Play Authenticate core:
-/*
-    val playAuthenticate = play.Project(
-      "play-authenticate", "1.0-SNAPSHOT", Seq(javaCore), path = file("modules/play-authenticate")
-    ).settings(
-      libraryDependencies += "org.apache.httpcomponents" % "httpclient" % "4.2",
-      libraryDependencies += "com.feth" %% "play-easymail" % "0.2-SNAPSHOT",
-      libraryDependencies += "org.mindrot" % "jbcrypt" % "0.3m",
-      libraryDependencies += "commons-lang" % "commons-lang" % "2.6",
-
-      resolvers += Resolver.url("play-easymail (release)", url("http://joscha.github.com/play-easymail/repo/releases/"))(Resolver.ivyStylePatterns),
-      resolvers += Resolver.url("play-easymail (snapshot)", url("http://joscha.github.com/play-easymail/repo/snapshots/"))(Resolver.ivyStylePatterns)
-    )
-*/
-
     val main = play.Project(appName, appVersion, appDependencies).settings(
-
       resolvers += Resolver.url("Objectify Play Repository (release)", url("http://schaloner.github.com/releases/"))(Resolver.ivyStylePatterns),
       resolvers += Resolver.url("Objectify Play Repository (snapshot)", url("http://schaloner.github.com/snapshots/"))(Resolver.ivyStylePatterns),
-
       resolvers += Resolver.url("play-easymail (release)", url("http://joscha.github.com/play-easymail/repo/releases/"))(Resolver.ivyStylePatterns),
       resolvers += Resolver.url("play-easymail (snapshot)", url("http://joscha.github.com/play-easymail/repo/snapshots/"))(Resolver.ivyStylePatterns),
-
       resolvers += Resolver.url("play-authenticate (release)", url("http://joscha.github.com/play-authenticate/repo/releases/"))(Resolver.ivyStylePatterns),
-      resolvers += Resolver.url("play-authenticate (snapshot)", url("http://joscha.github.com/play-authenticate/repo/snapshots/"))(Resolver.ivyStylePatterns)
+      resolvers += Resolver.url("play-authenticate (snapshot)", url("http://joscha.github.com/play-authenticate/repo/snapshots/"))(Resolver.ivyStylePatterns),
+	  resolvers += Resolver.url("Typesafe Ivy Snapshots Repository", url("http://repo.typesafe.com/typesafe/ivy-snapshots/"))(Resolver.ivyStylePatterns)
+      templatesImport += "be.objectify.deadbolt.java.views.html._",
+      templatesImport += "be.objectify.deadbolt.core.utils.TemplateUtils._"
     )
-//  Uncomment this for local development of the Play Authenticate core:
-//    .dependsOn(playAuthenticate).aggregate(playAuthenticate)
 
 }

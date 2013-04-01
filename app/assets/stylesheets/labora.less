@@ -14,60 +14,70 @@
 @color7: #b3de69;
 @color8: #fccde5;
 
-@height: 576px;
-@radius: 3px;
-@gap: 20px;
-@padding: 10px;
+@screenheight: 600px;
+@verticalgap: 15px;
 
-#unbuiltBuildings {
-  background-color: @color1;
-  border-radius: @radius;
-  height: ((@height - @gap * 2) * .3);
+
+/* make the scrollbars always visible, but only active when needed */
+html {
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll;
 }
 
-#rondel {
-  background-color: @color2;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .5);
+body {
+    padding-top:41px;
 }
 
-#playerBoard {
-  background-color: @color3;
-  border-radius: @radius;
-  height: ((@height - @gap * 2) * .6);
-  margin-top: @gap;
-}
-
-#settlements {
-  background-color: @color4;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .1);
-  margin-top: @gap;
-}
-
+#east,
+#west,
+#activePlayer,
+#playerTabs,
+#round,
+#unbuiltBuildings,
+#rondel,
+#playerBoard,
+#rondel,
+#settlements,
 #inventory {
-  background-color: @color5;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .3);
-  margin-top: @gap;
-}
-
-#north {
-  margin-bottom: @gap;
+  position: relative;
+  border-radius: 4px;
 }
 
 #activePlayer {
   background-color: @color6;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .1);
+  margin-top: @verticalgap;
 }
 #playerTabs {
   background-color: @color7;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .1);
+  margin-top: @verticalgap;
 }
 #round {
   background-color: @color8;
-  border-radius: @radius;
-  height: ((@height - @gap * 3) * .1);
+  margin-top: @verticalgap;
 }
+
+#unbuiltBuildings {
+  background-color: @color1;
+  margin-top: @verticalgap;
+}
+
+#rondel {
+  background-color: @color2;
+  margin-top: @verticalgap;
+}
+
+#playerBoard {
+  background-color: @color3;
+  margin-top: @verticalgap;
+}
+
+#settlements {
+  background-color: @color4;
+  margin-top: @verticalgap;
+}
+
+#inventory {
+  background-color: @color5;
+  margin-top: @verticalgap;
+}
+

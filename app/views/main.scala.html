@@ -1,8 +1,5 @@
 @(title: String, nav: String = "")(content: Html)
 
-@import be.objectify.deadbolt.java.views.html._
-@import be.objectify.deadbolt.core.utils.TemplateUtils._
-
 <!DOCTYPE html>
 <html lang="@lang().code()">
   <head>
@@ -13,13 +10,15 @@
     
     <!-- Le scripts -->
   	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  	<script src="@routes.Assets.at("js/bootstrap.min.js")"></script>
+    <script src="@routes.Assets.at("javascripts/bootstrap.js")"></script>
+    <script src="@routes.Assets.at("javascripts/dust-core-0.6.0.min.js")"></script>
   	<script src="@routes.Application.jsRoutes" defer="defer"></script>
+  	<script src="@routes.Assets.at("templates/game.js")"></script>
 	
     <!-- Le styles -->
     <link href="@routes.Assets.at("stylesheets/main.min.css")" rel="stylesheet">
     <link href="@routes.Assets.at("stylesheets/labora.min.css")" rel="stylesheet">
-    <link href="@routes.Assets.at("css/bootstrap.min.css")" rel="stylesheet">
+    <link href="@routes.Assets.at("stylesheets/bootstrap.css")" rel="stylesheet">
     
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -31,9 +30,9 @@
 
     <body>
       
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner">
-        <div class="container">
+        <div class="navbar navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -65,14 +64,14 @@
                     <div class="nav-collapse">
                         <ul class="nav">
                             <li class="@("active".when(nav == ""))"><a href="@routes.Application.index()">@Messages("playauthenticate.navigation.home")</a></li>
-                            <li class="@("active".when(nav == "labora"))"><a href="@routes.Application.labora()">@Messages("playauthenticate.navigation.labora")</a></li>
+                            <li class="@("active".when(nav == "labora"))"><a href="@routes.Labora.index()">@Messages("playauthenticate.navigation.labora")</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         
-        <div class="container">
+        <div class="container" style="margin-top: 20px;">
 
 	    @if(flash.contains(Application.FLASH_ERROR_KEY)) {
 	      <div class="alert alert-error">
@@ -86,7 +85,7 @@
 	    }
 		@content
 		
-
+<!--
       <footer>
         <p>
           <small>
@@ -98,6 +97,8 @@
           </small>
         </p>
       </footer>
+-->
+
     </div> <!-- /container -->
 
   </body>
